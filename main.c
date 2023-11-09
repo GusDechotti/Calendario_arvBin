@@ -10,7 +10,7 @@ struct No{
     typedef struct No no;
     typedef no *ArvBin;
 
-    AvrBin* criarAvrBin(){
+    AvrBin* criarAvr(){
     ArvBin *raiz =(ArvBin*) malloc(sizeof(AvrBin));
     if(raiz != NULL){
         *raiz=NULL;
@@ -78,6 +78,44 @@ int insere_ArvBin(ArvBin* raiz){
     }
 }
 
-int main (){
+void imprime_no(no *no_print){
+    if(no_print == NULL){
+        return;
+    }else{
+        imprime_no(no_print->esq);
+        printf("-> %i/%i - %i\n",no_print->dia, no_print->mes, no_print->evento);
+        imprime_no(no_print->dir);
+    }
+}
 
+int imprime(ArvBin * raiz){
+    if(raiz == NULL){
+        return 0;
+    }else{
+        imprime_no(*raiz);
+    }
+}
+
+int main (){
+    ArvBin *raiz = criarAvr();
+    int choice;
+
+    do{
+    printf("---BEM VINDO(A) AO CALENDARIO---\n O que deseja fazer?\n");
+    printf("1. Cadastrar novo evento\n");
+    printf("2. Visualizar eventos\n");
+    printf("0. Sair\n");
+    scanf("%i",&choice);
+    switch(choice){
+    case 1:
+        insere_ArvBin(raiz);
+        break;
+    case 2:
+        imprime(raiz);
+        break;
+    default:
+        printf("Erro! Faca uma escolha valida.");
+        break;
+    }
+    }while(choice!=0);
 }
