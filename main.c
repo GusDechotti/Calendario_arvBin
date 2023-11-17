@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+    //Cria a Struct do evento
 struct No{
         int dia, mes;
         char evento[100];
@@ -9,7 +10,7 @@ struct No{
     };
     typedef struct No no;
     typedef no *ArvBin;
-
+    //Cria a cabeça da arvore
     AvrBin* criarAvr(){
     ArvBin *raiz =(ArvBin*) malloc(sizeof(AvrBin));
     if(raiz != NULL){
@@ -77,7 +78,7 @@ int insere_ArvBin(ArvBin* raiz){
         }
     }
 }
-
+    //IMPRIME ARVORE
 void imprime_no(no *no_print){
     if(no_print == NULL){
         return;
@@ -95,7 +96,18 @@ int imprime(ArvBin * raiz){
         imprime_no(*raiz);
     }
 }
-
+    //LE O TAMANHO DA ARVORE
+int tamanho(){
+    if (*raiz==NULL){
+        printf("Arvore vazia!\n")
+    }else{
+        no *atual =*raiz;
+        no *ant = NULL;
+        int contEsq=0,contDir=0;
+        while()
+    }
+}
+    //MAIN
 int main (){
     ArvBin *raiz = criarAvr();
     int choice;
