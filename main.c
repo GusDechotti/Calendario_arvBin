@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
     //Cria a Struct do evento
 struct No{
@@ -117,7 +118,10 @@ int imprime(ArvBin * raiz){
         imprime_no(*raiz);
     }
 }
+    //DELETA
+    int deletar(ArvBin * raiz){
 
+}
     //MAIN
 int main (){
     ArvBin *raiz = criarAvr();
@@ -127,6 +131,7 @@ int main (){
     printf("---BEM VINDO(A) AO CALENDARIO---\n O que deseja fazer?\n");
     printf("1. Cadastrar novo evento\n");
     printf("2. Visualizar eventos\n");
+    printf("3. Deletar um evento");
     printf("0. Sair\n");
     scanf("%i",&choice);
     switch(choice){
@@ -135,6 +140,9 @@ int main (){
         break;
     case 2:
         imprime(raiz);
+        break;
+    case 3:
+        deletar(raiz);
         break;
     default:
         printf("Erro! Faca uma escolha valida.");
