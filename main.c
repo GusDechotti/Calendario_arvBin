@@ -10,6 +10,16 @@ struct No{
     };
     typedef struct No no;
     typedef no *ArvBin;
+
+    //Cria struct da lista
+    struct Node {
+    ArvBin arvbin;
+    struct Node* prox;
+};
+
+typedef struct Node node;
+typedef node* lista;
+
     //Cria a cabeça da arvore
     AvrBin* criarAvr(){
     ArvBin *raiz =(ArvBin*) malloc(sizeof(AvrBin));
