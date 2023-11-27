@@ -31,6 +31,17 @@ typedef node* lista;
     }
     return raiz;
 }
+    //Cria a cabeca da lista
+    lista* criarlista(){
+    lista *inicio = (lista*) malloc(sizeof(lista));
+    if (inicio != NULL){
+        *inicio = NULL;
+    }else{
+        printf("Erro na alocação");
+    }
+    return inicio;
+}
+
 
     //INSERE NA ARVORE
 int insere_ArvBin(ArvBin* raiz){
@@ -106,17 +117,7 @@ int imprime(ArvBin * raiz){
         imprime_no(*raiz);
     }
 }
-    //LE O TAMANHO DA ARVORE
-int tamanho(){
-    if (*raiz==NULL){
-        printf("Arvore vazia!\n")
-    }else{
-        no *atual =*raiz;
-        no *ant = NULL;
-        int contEsq=0,contDir=0;
-        while()
-    }
-}
+
     //MAIN
 int main (){
     ArvBin *raiz = criarAvr();
